@@ -1,4 +1,4 @@
-# Parkinson’s Progression Markers Initiative (PPMI) Dataset and code for PD detection
+<img width="468" height="16" alt="image" src="https://github.com/user-attachments/assets/aab9ee8e-af69-46f7-be57-63c94a12a286" /># Parkinson’s Progression Markers Initiative (PPMI) Dataset and code for PD detection
 
 # Introduction:
 Deep learning models (VGG19, GCN) with Salp Swarm Optimization for Parkinson’s Disease detection using MRI scans. Parkinson's Disease Detection This repository implements a machine learning pipeline for detecting Parkinson's disease (PD) using DICOM imaging data from the PPMI dataset. The pipeline employs deep learning (VGG19-based models) and graph-based methods (Graph Convolutional Networks) with Salp Swarm Optimization (SSO) for hyperparameter tuning. 
@@ -44,5 +44,6 @@ Primary Metrics: Accuracy and Area Under the ROC Curve (AUC). Secondary Metrics:
 Dataset: The dataset may have selection bias, limiting generalizability to diverse PD populations. Preprocessing: DICOM image preprocessing (normalization, resizing) may lose fine-grained details critical for diagnosis. Models: VGG19 models rely on pre-trained weights, which may not fully adapt to medical imaging. GCN models depend on graph construction quality (e.g., similarity threshold), which can affect performance.
 Compute: GPU is recommended for faster training; local CPU runs may be slow for large datasets. Evaluation: Focus on binary classification may miss nuanced PD progression stages.
 # Additional Notes:
-Ensure GPU drivers and CUDA are installed for TensorFlow/PyTorch if using GPU. Check visualizations/ and plots/ directories for output plots. Report issues on the GitHub repository: https://github.com/dineshreddy4096/pd-detection.
+Ensure GPU drivers and CUDA are installed for TensorFlow/PyTorch if using GPU. Check visualizations/ and plots/ directories for output plots. Report issues on the GitHub repository: 
+https://github.com/rachavetidhanush/PPMI_PD_Detection
 License MIT License. See LICENSE for details.
