@@ -38,8 +38,28 @@ Operating System: Tested on Ubuntu 20.04 (Kaggle environment) and compatible wit
 Dataset Location:
 Dataset: Parkinson's disease DICOM imaging data. URL: https://drive.google.com/drive/folders/16fD8c2chMV63POxbTZGUuZQd5zbULvsq?usp=sharing. Details: Contains PPMI dataset with DICOM files for PD patients and healthy controls, including clinical and imaging data. Access may require Google Drive permissions.
 # Evaluation Method Models are evaluated on test sets using:
-The proposed framework is evaluated by splitting the dataset in to training and testing data further evaluated using the following metrics: 
-Primary Metrics: Accuracy and Area Under the ROC Curve (AUC). Secondary Metrics: Precision, recall, F1-score (via classification report), confusion matrix. Process: VGG19 and VGG19-SSO: Evaluate on test images (15-20% of data) for binary classification (PD vs. healthy). GCN and GCN-SSO: Evaluate on test nodes (20-30% of graph) for binary classification. Metrics are computed using sklearn.metrics and visualized (confusion matrix, ROC curve, precision-recall curve).
+The proposed framework is evaluated by splitting the dataset into training and testing sets.
+Primary Metrics:
+Accuracy
+Area Under the ROC Curve (AUC)
+Secondary Metrics:
+Precision
+Recall
+F1-score (obtained from the classification report)
+Confusion matrix
+Evaluation Process:
+VGG19 and VGG19-SSO:
+Evaluated on test images (15–20% of the dataset)
+Perform binary classification (Parkinson’s Disease vs. healthy)
+GCN and GCN-SSO:
+Evaluated on test nodes (20–30% of the graph)
+Perform binary classification
+Implementation Details:
+Metrics are computed using sklearn.metrics
+Results are visualized using:
+Confusion matrix
+ROC curve
+Precision–recall curve
 # Limitations:
 Dataset: The dataset may have selection bias, limiting generalizability to diverse PD populations. Preprocessing: DICOM image preprocessing (normalization, resizing) may lose fine-grained details critical for diagnosis. Models: VGG19 models rely on pre-trained weights, which may not fully adapt to medical imaging. GCN models depend on graph construction quality (e.g., similarity threshold), which can affect performance.
 Compute: GPU is recommended for faster training; local CPU runs may be slow for large datasets. Evaluation: Focus on binary classification may miss nuanced PD progression stages.
