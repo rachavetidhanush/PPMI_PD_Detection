@@ -1,4 +1,4 @@
-<img width="468" height="16" alt="image" src="https://github.com/user-attachments/assets/aab9ee8e-af69-46f7-be57-63c94a12a286" /># Parkinson’s Progression Markers Initiative (PPMI) Dataset and code for PD detection
+# Parkinson’s Progression Markers Initiative (PPMI) Dataset and code for PD detection
 
 # Introduction:
 Deep learning models (VGG19, GCN) with Salp Swarm Optimization for Parkinson’s Disease detection using MRI scans. Parkinson's Disease Detection This repository implements a machine learning pipeline for detecting Parkinson's disease (PD) using DICOM imaging data from the PPMI dataset. The pipeline employs deep learning (VGG19-based models) and graph-based methods (Graph Convolutional Networks) with Salp Swarm Optimization (SSO) for hyperparameter tuning. 
