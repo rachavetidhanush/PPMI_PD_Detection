@@ -34,35 +34,35 @@ parkinson_gcn_model.pt, plots (graph_structure.png, feature_importance.png, node
 9.	Outputs: Model (parkinson_gcn_model.pt), plots in visualizations/ directory.
 10.	Verify Outputs: Models: Check for .h5, .keras, and .pt files. Plots: Check directories (plots/, visualizations/) or current directory for PNG files. Metrics: Review console output for accuracy, AUC, and classification reports.
 # Materials & Methods Computing Infrastructure:
-Operating System: Tested on Ubuntu 20.04 (Kaggle environment) and compatible with Windows 10. Hardware: Local machine with 16GB RAM, Intel i7 CPU, optional GPU (NVIDIA CUDA-compatible for TensorFlow/PyTorch).
-Dataset Location:
-Dataset: Parkinson's disease DICOM imaging data. URL: https://drive.google.com/drive/folders/16fD8c2chMV63POxbTZGUuZQd5zbULvsq?usp=sharing. Details: Contains PPMI dataset with DICOM files for PD patients and healthy controls, including clinical and imaging data. Access may require Google Drive permissions.
+| **Category**               | **Details**                                                                                                                                                                  |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Operating System**       | Tested on Ubuntu 20.04 (Kaggle environment); compatible with Windows 10                                                                                                      |
+| **Hardware Requirements**  | Local machine with 16 GB RAM and Intel i7 CPU; optional GPU (NVIDIA CUDA-compatible for TensorFlow/PyTorch)                                                                  |
+| **Dataset Name**           | Parkinson’s Disease DICOM Imaging Dataset (PPMI)                                                                                                                             |
+| **Dataset Location (URL)** | [https://drive.google.com/drive/folders/16fD8c2chMV63POxbTZGUuZQd5zbULvsq?usp=sharing](https://drive.google.com/drive/folders/16fD8c2chMV63POxbTZGUuZQd5zbULvsq?usp=sharing) |
+| **Dataset Description**    | Contains PPMI dataset with DICOM files for Parkinson’s Disease patients and healthy controls                                                                                 |
+| **Data Contents**          | Includes medical imaging data along with associated clinical information                                                                                                     |
+| **Access Information**     | Access may require Google Drive permissions/approval                                                                                                                         |
+
 # Evaluation Method Models are evaluated on test sets using:
-The proposed framework is evaluated by splitting the dataset into training and testing sets.
-Primary Metrics:
-Accuracy
-Area Under the ROC Curve (AUC)
-Secondary Metrics:
-Precision
-Recall
-F1-score (obtained from the classification report)
-Confusion matrix
-Evaluation Process:
-VGG19 and VGG19-SSO:
-Evaluated on test images (15–20% of the dataset)
-Perform binary classification (Parkinson’s Disease vs. healthy)
-GCN and GCN-SSO:
-Evaluated on test nodes (20–30% of the graph)
-Perform binary classification
-Implementation Details:
-Metrics are computed using sklearn.metrics
-Results are visualized using:
-Confusion matrix
-ROC curve
-Precision–recall curve
-# Limitations:
-Dataset: The dataset may have selection bias, limiting generalizability to diverse PD populations. Preprocessing: DICOM image preprocessing (normalization, resizing) may lose fine-grained details critical for diagnosis. Models: VGG19 models rely on pre-trained weights, which may not fully adapt to medical imaging. GCN models depend on graph construction quality (e.g., similarity threshold), which can affect performance.
-Compute: GPU is recommended for faster training; local CPU runs may be slow for large datasets. Evaluation: Focus on binary classification may miss nuanced PD progression stages.
+
+| **Category**                     | **Details**                                                                                |
+| -------------------------------- | ------------------------------------------------------------------------------------------ |
+| **Dataset Split**                | The dataset is divided into training and testing subsets for evaluation.                   |
+| **Primary Metrics**              | Accuracy, Area Under the ROC Curve (AUC)                                                   |
+| **Secondary Metrics**            | Precision, Recall, F1-score (from classification report), Confusion Matrix                 |
+| **VGG19 & VGG19-SSO Evaluation** | Tested on 15–20% of image data for binary classification (Parkinson’s Disease vs. Healthy) |
+| **GCN & GCN-SSO Evaluation**     | Tested on 20–30% of graph nodes for binary classification                                  |
+| **Metric Computation**           | Calculated using `sklearn.metrics`                                                         |
+| **Visualization**                | Confusion Matrix, ROC Curve, Precision–Recall Curve                                        |
+| **Implementation Style**         | Modular and reproducible design suitable for GitHub deployment                             |
+| **Project Structure**            | `data/`, `models/`, `training/`, `evaluation/`, `utils/`                                   |
+| **Key Features**                 | Configurable data split, automated evaluation pipeline, support for image and graph models |
+| **Deployment Details**           | Includes `requirements.txt`, reproducible setup, GPU support                               |
+| **Usage**                        | Clone repository, install dependencies, run training and evaluation scripts                |
+
+
+
 # Additional Notes:
 Ensure GPU drivers and CUDA are installed for TensorFlow/PyTorch if using GPU. Check visualizations/ and plots/ directories for output plots. Report issues on the GitHub repository: 
 https://github.com/rachavetidhanush/PPMI_PD_Detection
